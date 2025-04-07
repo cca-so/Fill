@@ -30,8 +30,8 @@
       
   <div class="hamburger"> <span></span> <span></span> <span></span> </div>
       <ul>
-        <li><a href="index.html">Top</a></li>
-        <li><a href="#consept">Concept</a></li>
+        <li><a href="#top">Top</a></li>
+        <li><a href="#concept">Concept</a></li>
         <li><a href="#scent">Scent</a></li>
         <li><a href="#product">Product</a></li>
         <li><a href="#shop">Shop</a></li>
@@ -41,7 +41,7 @@
   
     
   </header>
-  <main>
+  <main  id="top">
     <div class="fv">
       
       <div class="video_front"></div>
@@ -57,8 +57,13 @@
     
     
     
-    <section id="consept">
+    <section id="concept">
       <h2>Brand Concept</h2>
+			
+			<object type="image/svg+xml" data="img/curve.svg" id="svgObject" class="svg_bg"></object>
+			
+			
+			
       <div class="contents_wrap">
         <div class="copy_and_img">
 <div class="copy_extraordinary">
@@ -67,7 +72,7 @@
             <span class="smoke">煙</span></p>
         </div>
         <div class="right_end img_smoke">
-          <img src="img/img_01.png" alt="イメージ1">
+          <img src="img/img_01.png" alt="線香の画像">
         </div>
 </div>
         <div>
@@ -88,7 +93,7 @@
             たとえ文明が進んでも、本能が覚えている。 </p>
         </div>
         <div>
-          <img src="img/img_02.png" alt="イメージ2">
+          <img src="img/img_02.png" alt="マッチの火">
         </div>
         <div class="copy_fire">
           <p><span  class="fire">火</span>を灯す<br>
@@ -96,6 +101,7 @@
         </div>
       </div>
     </section>
+    
     <section class="message">
       <h2>Brand message</h2>
       <div class="contents_wrap">
@@ -117,11 +123,12 @@
       </div>
     </section>
     
-    <section id="scent">
+    <div class="contents_wrap">
+<section id="scent">
       
         <h2>Scent</h2>
         <div class="flex_2">
-          <section>
+          <section class="scent_card">
             <h3>Echo of the Forest</h3>
             <img src="img/EoF.png" alt="Echo of the Forestイメージ">
             <h4>森林の緑と大地と苔、<br>
@@ -132,7 +139,7 @@
                 やがて川へ海へと旅に出る。<br>
                 それまでひと時の旅支度。</p>           
           </section>
-          <section>
+          <section class="scent_card">
             <h3>Soul of the Desert</h3>
             <img src="img/SotD.png" alt="Soul of the Desertイメージ">
             <h4>熱砂にインスピレーションを受けた<br>
@@ -147,9 +154,10 @@
           </section>
         </div>
      
-      
       <!--/scent-->
     </section>
+    
+    
     <section id="product">
      
 <h2>Product</h2>
@@ -174,6 +182,7 @@
         <a href="#"><img src="img/banner_nile.png" alt="ナイルバナー"></a> <a href="#"><img src="img/banner_yatta.png" alt="yattaショッピングバナー"></a> <a href="#"><img src="img/banner_rakuen.png" alt="rakuen市場バナー"></a>
       </div>
     </section>
+<!--/contents_wrap--></div>
   </main>
   <footer>
     
@@ -182,7 +191,7 @@
 <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a> <a href="https://x.com/"><i class="fa-brands fa-x-twitter"></i></a>
 </div>
 <a href="index.html"><img src="img/Fill_logo_white.svg" alt="" class="footer_logo" width="150px"></a>
-<p class="company">株式会社煙縁　公式サイト（別窓）<i class="fa-solid fa-arrow-up-right-from-square"></i></p>
+<a href="#"><p class="company">株式会社煙縁　公式サイト（別窓）<i class="fa-solid fa-arrow-up-right-from-square"></i></p></a>
 <p class="fiction">※これはweb制作練習用の架空サイトです</p>
 <p class="copyright">&copy; 2025 Fill</p>
 </footer>
