@@ -318,7 +318,7 @@ h1 img {
   flex-wrap: wrap;
 }
 .scent_card {
-  padding: 20px;
+  padding: 16px;
 }
 .test img {
   margin: 0 auto;
@@ -406,7 +406,7 @@ footer {
     font-size: 56px;
   }
   .scent_card{
-    width: 100vw;
+    width: 90vw;
   }
   .scent_card img {
     transform: scale(0.7);
