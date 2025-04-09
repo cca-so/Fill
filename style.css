@@ -5,6 +5,7 @@
 }
 body {
   background-color: #0A223F;
+	
 }
 header {
   position: fixed;
@@ -90,14 +91,14 @@ h1 img {
   background-color: #0A223F;
   align-items: center;
   justify-content: center;
-  animation: fadeOut 1.5s 2.5s forwards;
+  animation: fade_out 1.5s 2.5s forwards;
   z-index: 9999;
 }
 .loading.is_active {
   opacity: 0;
   visibility: hidden;
 }
-@keyframes fadeOut {
+@keyframes fade_ut {
   0% {
     opacity: 1;
   }
@@ -271,11 +272,11 @@ h1 img {
   }
 }
 /*コンセプトセクション*/
-/*煙*/
 #concept {
   position: relative;
   overflow: hidden;
 }
+/*煙*/
 .svg_bg {
   position: absolute;
   top: 0;
@@ -292,19 +293,6 @@ h1 img {
 @media (min-width: 980px) {
   .smoke_svg.pc {
     display: block;
-  }
-}
-/* 下から上に移動しながらフェードイン */
-.fadeInUp {
-  opacity: 0;
-  transform: translateY(150px);
-}
-/* フェードインアニメーション */
-@keyframes fadeIn {
-  0% {}
-  100% {
-    opacity: 1;
-    transform: translate(0);
   }
 }
 /* 煙のフェードイン */
