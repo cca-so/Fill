@@ -2,7 +2,6 @@
 /* CSS Document */
 * {
   scroll-behavior: smooth;
- 
 }
 body {
   background-color: #0A223F;
@@ -306,7 +305,6 @@ h1 img {
   100% {
     opacity: 1;
     transform: translate(0);
- 
   }
 }
 /* 煙のフェードイン */
@@ -401,15 +399,11 @@ h1 img {
   display: flex;
   flex-wrap: wrap;
   overflow: hidden;
-	column-gap: 56px;
+  column-gap: 56px;
 }
 .scent_card {
   margin: 0 auto;
-	padding: 16px;
-
-}
-.scent_card:not(:first-child){
-	margin-top: 56px;
+  padding: 16px;
 }
 .test img {
   margin: 0 auto;
@@ -465,12 +459,8 @@ footer {
 .copyright {
   font-size: 14px;
 }
-
 /*レスポンシブ*/
 @media screen and (max-width:980px) {
-  /*section {
-    margin-top: 80px;
-  }*/
   .contents_wrap {
     width: 90vw;
   }
@@ -487,6 +477,9 @@ footer {
 @media screen and (max-width: 979px) {
   .smoke_svg.tablet {
     display: block;
+  }
+  .scent_card:not(:first-child) {
+    margin-top: 56px;
   }
 }
 @media screen and (max-width:500px) {
