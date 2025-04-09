@@ -81,6 +81,7 @@ h1 img {
   padding-left: 24px;
 }
 /*ローディングブランドロゴ*/
+/*ローディングブランドロゴ*/
 .loading {
   position: fixed;
   top: 0;
@@ -91,14 +92,14 @@ h1 img {
   background-color: #0A223F;
   align-items: center;
   justify-content: center;
-  animation: fade_out 1.5s 2.5s forwards;
+  animation: fadeOut 1.5s 2.5s forwards;
   z-index: 9999;
 }
 .loading.is_active {
   opacity: 0;
   visibility: hidden;
 }
-@keyframes fade_ut {
+@keyframes fadeOut {
   0% {
     opacity: 1;
   }
