@@ -1,5 +1,24 @@
 // JavaScript Document
 
+/*ローディングアニメ*/
+$(function () {
+  var webStorage = function () {
+    if (sessionStorage.getItem('access')) {
+      //2回目以降アクセス時の処理
+      $(".loading").addClass('is_active');
+    } else {
+      //初回アクセス時の処理
+      sessionStorage.setItem('access', 'true');
+      $(".loading_animation").addClass('is_active');
+      setTimeout(function () {
+        $(".loading").addClass('is_active');
+        $(".loading_animation").removeClass('is_active');
+      }, 5000);
+    }
+  }
+  webStorage();
+});
+
 
 /*ハンバーガーメニュー*/
 $(function () {
@@ -17,29 +36,25 @@ $(document).click(function (event) {
 });
 
 
+/*PC煙のスクロールアニメ*/
 document.addEventListener("DOMContentLoaded", () => {
   const svgObject = document.getElementById("svgObject");
-
-
+  
+	
   svgObject.addEventListener("load", () => {
     const svgDoc = svgObject.contentDocument;
     const path = svgDoc.querySelector(".smoke");
     const pathLength = path.getTotalLength();
-
     path.style.strokeDasharray = pathLength;
     path.style.strokeDashoffset = pathLength;
-
     const targetSection = document.getElementById("concept");
-
-    // 幅に応じた補正係数を返す関数
+    // 幅に応じた補正係数を返す
     function getSpeedFactor() {
-
       const width = window.innerWidth;
-      if (width <= 480) return 1.5; // スマホ
-      if (width <= 768) return 1.2; // タブレット
-      return 0.85; // PC
+      if (width <= 1100) return 1.0; 
+      if (width <= 1300) return 0.9; 
+      return 0.7; 
     }
-
 
     function updatePath() {
       const sectionTop = targetSection.offsetTop;
@@ -67,4 +82,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     updatePath();
   });
+});
+
+
+/*フェードアニメーションプラグイン初期化と共通設定*/
+AOS.init({
+   once:"false"
 });

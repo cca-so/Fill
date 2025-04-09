@@ -1,7 +1,8 @@
 @charset "utf-8";
 /* CSS Document */
-*{
+* {
   scroll-behavior: smooth;
+ 
 }
 body {
   background-color: #0A223F;
@@ -12,7 +13,7 @@ header {
   z-index: 10;
 }
 section {
-  margin: 144px auto 0;
+  margin: 120px auto 0;
 }
 h2, h3, h4, p, dl {
   color: #F2F2F1;
@@ -54,16 +55,17 @@ h2 + div {
 h3 + img {
   margin-top: 32px;
 }
-a{
+a {
   text-decoration-line: none;
   transition: 0.3s;
 }
-a:hover{
+a:hover {
   opacity: 0.7;
 }
 dl {
   display: flex;
   flex-wrap: wrap;
+  margin: 48px auto;
   max-width: 100%;
   line-height: 1.8;
 }
@@ -78,6 +80,51 @@ h1 img {
   padding-top: 24px;
   padding-left: 24px;
 }
+/*ローディングブランドロゴ*/
+.loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  background-color: #0A223F;
+  align-items: center;
+  justify-content: center;
+  animation: fadeOut 1.5s 2.5s forwards;
+  z-index: 9999;
+}
+.loading.is_active {
+  opacity: 0;
+  visibility: hidden;
+}
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+.loading_logo {
+  width: 175px;
+  opacity: 0;
+  animation: logo_fade 2s 0.5s forwards;
+}
+@keyframes logo_fade {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+  }
+}
 /*ハンバーガーメニューのスタイル*/
 .menu {
   position: fixed;
@@ -88,7 +135,7 @@ h1 img {
   color: #F2F2F1;
   transition: top 0.3s ease;
   padding: 20px;
-  z-index: 20;
+  z-index: 100;
 }
 /* メニューが開いているとき */
 .menu.open {
@@ -101,7 +148,7 @@ h1 img {
   right: 20px;
   width: 40px;
   cursor: pointer;
-  z-index: 99;
+  z-index: 100;
 }
 .hamburger span {
   display: block;
@@ -135,7 +182,6 @@ h1 img {
   border-bottom: 1px solid #F9F7F7;
   text-align: center;
   font-weight: 600;
-  /*text-shadow: 0px 0px 10px #0A223F99;*/
 }
 .menu li a {
   color: #F2F2F1;
@@ -151,6 +197,7 @@ h1 img {
 .contents_wrap {
   width: 960px;
   margin: 0 auto;
+  overflow: hidden;
 }
 /*ファーストビュー*/
 .fv {
@@ -184,7 +231,7 @@ h1 img {
   bottom: 30px;
   /*全体の高さ*/
   height: 50px;
-  z-index: 10;
+  z-index: 1;
 }
 /*Scrollテキストの描写*/
 .scrolldown span {
@@ -204,7 +251,6 @@ h1 img {
   width: 1px;
   height: 80px;
   background: #F9F7F7;
-  /*線の動き1.4秒かけて動く。永遠にループ*/
   animation: pathmove 1.4s ease-in-out infinite;
   opacity: 0;
 }
@@ -225,25 +271,51 @@ h1 img {
     opacity: 0;
   }
 }
-/*コンセプト*/
+/*コンセプトセクション*/
 /*煙*/
 #concept {
   position: relative;
-		overflow: hidden;
+  overflow: hidden;
 }
 .svg_bg {
   position: absolute;
   top: 0;
-  width: 100%;
-  height: 100vh;
-  z-index: -1; /* 背景に配置 */
-  pointer-events: none; /* クリックを無効化 */
-}
-#svgObject {
   width: 120%;
   height: auto;
-  display: block;
+  z-index: -1;
+  pointer-events: none;
 }
+/* 共通で非表示にしておく */
+.smoke_svg {
+  display: none;
+}
+/* PCサイズでのみ表示 */
+@media (min-width: 980px) {
+  .smoke_svg.pc {
+    display: block;
+  }
+}
+/* 下から上に移動しながらフェードイン */
+.fadeInUp {
+  opacity: 0;
+  transform: translateY(150px);
+}
+/* フェードインアニメーション */
+@keyframes fadeIn {
+  0% {}
+  100% {
+    opacity: 1;
+    transform: translate(0);
+ 
+  }
+}
+/* 煙のフェードイン */
+.fadeIn {
+  animation-name: fadeIn;
+  animation-duration: 1.5s;
+  animation-fill-mode: forwards;
+}
+/*------------------------*/
 #concept h2 {
   display: none;
 }
@@ -296,7 +368,7 @@ h1 img {
 }
 /*ブランドメッセージセクション*/
 .message {
-  width: 100%;
+  width: 100vw;
   margin: 0 calc(50% - 50vw);
   background-image: url("img/bg_message.png");
   background-size: cover;
@@ -328,10 +400,16 @@ h1 img {
 .flex_2 {
   display: flex;
   flex-wrap: wrap;
+  overflow: hidden;
+	column-gap: 56px;
 }
-
 .scent_card {
-  padding: 16px;
+  margin: 0 auto;
+	padding: 16px;
+
+}
+.scent_card:not(:first-child){
+	margin-top: 56px;
 }
 .test img {
   margin: 0 auto;
@@ -359,6 +437,7 @@ h4 + p {
 }
 /*フッター*/
 footer {
+  width: 100vw;
   margin-top: 120px;
   background: linear-gradient(180deg, #0A223F 0%, #f7c06eee 100%);
   text-align: center;
@@ -386,10 +465,12 @@ footer {
 .copyright {
   font-size: 14px;
 }
+
+/*レスポンシブ*/
 @media screen and (max-width:980px) {
-  section {
+  /*section {
     margin-top: 80px;
-  }
+  }*/
   .contents_wrap {
     width: 90vw;
   }
@@ -397,10 +478,15 @@ footer {
     padding: 24px;
   }
   #concept img {
-    width: 90%;
+    max-width: 90%;
   }
   .message {
     background-position: right -200px center;
+  }
+}
+@media screen and (max-width: 979px) {
+  .smoke_svg.tablet {
+    display: block;
   }
 }
 @media screen and (max-width:500px) {
@@ -409,11 +495,9 @@ footer {
     padding-top: 10px;
     padding-left: 10px;
   }
-  
-  .contents_wrap{
+  .contents_wrap {
     max-width: 90vw;
   }
-  
   .right_end {
     justify-content: flex-start;
   }
@@ -423,40 +507,28 @@ footer {
   .copy_free p {
     font-size: 56px;
   }
-  
-  
-  
-  
   /**/
   /* scentセクションの調整 */
   #scent {
-    padding: 40px 16px; /* 左右に余白を追加 */
+    padding: 40px 16px;
   }
-  /* scent_cardをレスポンシブに */
   .scent_card {
     flex: 1 1 100%;
     max-width: 100%;
     padding: 16px;
   }
-  /* 画像がはみ出ないように調整＋センター寄せ */
   .scent_card img {
     display: block;
-    max-width: 100%;
     height: auto;
+    max-width: 100%;
     margin: 0 auto;
+    transform: scale(0.8);
+    transform-origin: center;
   }
-  /* レスポンシブのためのflex調整 */
   .flex_2 {
     display: flex;
     flex-wrap: wrap;
     gap: 32px;
-  }
-
-  /**/
- 
-  .scent_card img {
-    transform: scale(0.8);
-    transform-origin: center;
   }
   h4 {
     font-size: 20px;
@@ -465,5 +537,3 @@ footer {
     column-gap: 80px;
   }
 }
-
-
