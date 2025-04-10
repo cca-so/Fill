@@ -9,7 +9,7 @@
 
 <!--リセットcss-->
 <link rel="stylesheet" href="css/ress.min.css">
-<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<link rel="stylesheet" href="css/aos.css">
 <link rel="stylesheet" href="style.css">
 
 <!--フォント-->
@@ -54,10 +54,10 @@
     
     <!--背景の煙--> 
     <!--PC版の煙-->
-    <object id="svgObject" type="image/svg+xml" data="img/curve.svg"  class="smoke_svg svg_bg pc">
+    <object id="smoke_svg" type="image/svg+xml" data="img/curve.svg"  class="smoke_svg svg_bg pc">
     </object>
     <!--タブレット以下幅の煙-->
-    <object id="svgObject_tab" type="image/svg+xml" data="img/curve_sp.svg" class="smoke_svg svg_bg tablet" data-aos="fade-up" data-aos-duration="3000" data-aos-delay="200">
+    <object id="smoke_svg_tab" type="image/svg+xml" data="img/curve_sp.svg" class="smoke_svg svg_bg tablet" data-aos="fade-up" data-aos-duration="3000" data-aos-delay="200">
     </object>
     <!--背景ここまで-->
     
@@ -66,7 +66,7 @@
         <div class="copy_extraordinary">
           <p>非日常を<br>
             たぐる<br>
-            <span class="smoke" data-aos="fade-in" data-aos-duration="800" data-aos-delay="100">煙</span></p>
+            <span class="smoke" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">煙</span></p>
         </div>
         <div class="right_end img_smoke"> <img src="img/img_01.png" alt="線香の画像"> </div>
       </div>
@@ -89,7 +89,7 @@
       </div>
       <div> <img src="img/img_02.png" alt="マッチの火"> </div>
       <div class="copy_fire">
-        <p><span class="fire" data-aos="fade-in" data-aos-duration="800" data-aos-delay="100">火</span>を灯す<br>
+        <p><span class="fire" data-aos="fade-in" data-aos-duration="1000" data-aos-delay="200">火</span>を灯す<br>
           喜びを</p>
       </div>
     </div>
@@ -115,7 +115,7 @@
     </div>
   </section>
   <div class="contents_wrap">
-    <section id="scent">
+    <section id="scent" data-aos="fade-up" data-aos-duration="500" data-aos-delay="100">
       <h2>Scent</h2>
       <div class="flex_2">
         <div class="scent_card"  data-aos="fade-in" data-aos-duration="1000">
@@ -144,7 +144,7 @@
       
       <!--/scent--> 
     </section>
-    <section id="product">
+    <section id="product" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
       <h2>Product</h2>
       <div class="product_info">
         <dl>
@@ -161,7 +161,7 @@
       
       <!--/product--> 
     </section>
-    <section id="shop">
+    <section id="shop" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
       <h2>Shop</h2>
       <div class="online"> <a href="#"><img src="img/banner_nile.png" alt="ナイルバナー"></a> <a href="#"><img src="img/banner_yatta.png" alt="yattaショッピングバナー"></a> <a href="#"><img src="img/banner_rakuen.png" alt="rakuen市場バナー"></a> </div>
     </section>
@@ -169,8 +169,8 @@
   </div>
 </main>
 <footer>
-  <div class="sns_icons"> <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a> <a href="https://x.com/"><i class="fa-brands fa-x-twitter"></i></a> </div>
-  <a href="index.html"><img src="img/Fill_logo_white.svg" alt="" class="footer_logo" width="150px"></a> <a href="#">
+  <div class="sns_icons" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100"> <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a> <a href="https://x.com/"><i class="fa-brands fa-x-twitter"></i></a> </div>
+  <a href="index.html"><img src="img/Fill_logo_white.svg" alt="" class="footer_logo" width="150px" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100"></a> <a href="#">
   <p class="company">株式会社煙縁　公式サイト（別窓）<i class="fa-solid fa-arrow-up-right-from-square"></i></p>
   </a>
   <p class="fiction">※これはweb制作練習用の架空サイトです</p>

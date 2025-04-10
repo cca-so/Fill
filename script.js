@@ -38,11 +38,11 @@ $(document).click(function (event) {
 
 /*PC煙のスクロールアニメ*/
 document.addEventListener("DOMContentLoaded", () => {
-  const svgObject = document.getElementById("svgObject");
+  const smoke_svg = document.getElementById("smoke_svg");
   
 	
-  svgObject.addEventListener("load", () => {
-    const svgDoc = svgObject.contentDocument;
+  smoke_svg.addEventListener("load", () => {
+    const svgDoc = smoke_svg.contentDocument;
     const path = svgDoc.querySelector(".smoke");
     const pathLength = path.getTotalLength();
     path.style.strokeDasharray = pathLength;
@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const width = window.innerWidth;
       if (width <= 1100) return 1.0; 
       if (width <= 1300) return 0.9; 
-      return 0.7; 
+      return 0.6; 
     }
 
     function updatePath() {
