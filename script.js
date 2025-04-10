@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const width = window.innerWidth;
       if (width <= 1100) return 1.0; 
       if (width <= 1300) return 0.9; 
-      return 0.6; 
+      return 0.7; 
     }
 
     function updatePath() {
